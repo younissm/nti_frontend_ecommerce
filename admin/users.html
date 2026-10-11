@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <main class="projects-page">
+        <header class="projects-header">
+            <div>
+                <h1>Users</h1>
+                <p>Create and manage customer and admin accounts.</p>
+            </div>
+            <nav class="projects-actions">
+                <a class="projects-button projects-button-secondary" href="products.html">Products</a>
+                <a class="projects-button projects-button-secondary" href="categories.html">Categories</a>
+                <a class="projects-button projects-button-secondary" href="orders.html">Orders</a>
+                <button id="logout" class="projects-button" type="button">Logout</button>
+            </nav>
+        </header>
+
+        <form id="user-form" class="admin-form">
+            <input id="user-email-original" type="hidden">
+            <h2 id="user-form-title">Add user</h2>
+            <div class="admin-form-grid">
+                <div class="field">
+                    <label for="user-name">Name</label>
+                    <input id="user-name" name="name" maxlength="100" required>
+                </div>
+                <div class="field">
+                    <label for="user-email">Email</label>
+                    <input id="user-email" name="email" type="email" required>
+                </div>
+                <div class="field">
+                    <label for="user-password">Password</label>
+                    <input id="user-password" name="password" type="password" minlength="8" required>
+                </div>
+                <div class="field">
+                    <label for="user-role">Account type</label>
+                    <select id="user-role" name="role" required>
+                        <option value="user">Customer</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+            </div>
+            <p id="user-message" class="form-message" role="alert" aria-live="polite" hidden></p>
+            <button id="user-submit" class="submit-button" type="submit">Add user</button>
+            <button id="user-cancel" class="projects-button projects-button-secondary" type="button" hidden>Cancel edit</button>
+        </form>
+
+        <h2>Accounts</h2>
+        <div id="users-list"></div>
+    </main>
+    <script src="../main.js"></script>
+    <script src="users-service.js"></script>
+    <script src="users.js"></script>
+</body>
+</html>

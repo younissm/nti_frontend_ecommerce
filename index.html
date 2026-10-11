@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="projects-page">
+        <header class="projects-header">
+            <div><h1>Shop</h1><p id="welcome"></p></div>
+            <nav class="projects-actions">
+                <a class="projects-button projects-button-secondary" href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+                <a class="projects-button projects-button-secondary" href="wishlist.html">Wishlist (<span id="wishlist-count">0</span>)</a>
+                <a class="projects-button projects-button-secondary" href="orders.html">My Orders</a>
+                <button id="logout" class="projects-button" type="button" onclick="logout()">Logout</button>
+            </nav>
+        </header>
+
+        <div class="projects-toolbar">
+            <input id="search" class="shop-search" type="text" placeholder="Search products">
+            <select id="category-filter" class="projects-filter shop-search">
+                <option value="">All categories</option>
+            </select>
+        </div>
+        <section id="products-container" class="card-grid" aria-label="Products"></section>
+        <div id="cart-error" class="projects-error"></div>
+    </main>
+
+    <script src="main.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

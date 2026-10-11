@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Categories</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <main class="projects-page">
+        <header class="projects-header">
+            <div>
+                <h1>Categories</h1>
+                <p>Add and edit the categories used by products.</p>
+            </div>
+            <nav class="projects-actions">
+                <a class="projects-button projects-button-secondary" href="products.html">Products</a>
+                <a class="projects-button projects-button-secondary" href="users.html">Users</a>
+                <a class="projects-button projects-button-secondary" href="orders.html">Orders</a>
+                <button id="logout" class="projects-button" type="button">Logout</button>
+            </nav>
+        </header>
+
+        <form id="category-form">
+            <input id="category-id" type="hidden">
+            <div class="field">
+                <label for="category-name">Category name</label>
+                <input id="category-name" name="categoryName" type="text" maxlength="50" required>
+            </div>
+            <p id="category-message" class="form-message" role="alert" aria-live="polite" hidden></p>
+            <button id="category-submit" class="submit-button" type="submit">Add category</button>
+            <button id="cancel-edit" class="projects-button projects-button-secondary" type="button" hidden>Cancel edit</button>
+        </form>
+
+        <h2>Existing categories</h2>
+        <div id="categories-list"></div>
+    </main>
+    <script src="../main.js"></script>
+    <script src="category-service.js"></script>
+    <script src="categories.js"></script>
+</body>
+</html>

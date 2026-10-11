@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="projects-page">
+        <header class="projects-header">
+            <div>
+                <h1>Your Cart</h1>
+                <p>Review your items before placing an order.</p>
+            </div>
+            <nav class="projects-actions">
+                <a class="projects-button projects-button-secondary" href="index.html">Keep Shopping</a>
+                <a class="projects-button projects-button-secondary" href="wishlist.html">Wishlist</a>
+                <a class="projects-button projects-button-secondary" href="orders.html">My Orders</a>
+                <button id="logout" class="projects-button" type="button">Logout</button>
+            </nav>
+        </header>
+        <p id="cart-error" class="error-text" role="status" aria-live="polite"></p>
+        <div id="cart-container"></div>
+        <p id="order-message" class="form-message" role="status" aria-live="polite" hidden></p>
+    </main>
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
