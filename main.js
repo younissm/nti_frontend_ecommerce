@@ -32,9 +32,13 @@ const dataStore = new LocalStorageDataStore();
 guard();
 defaultAdminUser();
 
+function normalizeEmail(email) {
+    return String(email ?? '').trim().toLowerCase();
+}
+
 function defaultAdminUser() {
     const users = getUsers();
-    const adminExists = users.some(user => user.email === 'admin@store.com');
+    const adminExists = users.some(user => normalizeEmail(user.email) === 'admin@store.com');
 
     if (adminExists) {
         return;
@@ -98,7 +102,8 @@ function saveUsers(users) {
 }
 
 function getUserByEmail(email) {
-    return getUsers().find(user => user.email === email);
+    const normalizedEmail = normalizeEmail(email);
+    return getUsers().find(user => normalizeEmail(user.email) === normalizedEmail);
 }
 
 function getCurrentUser() {
